@@ -1,0 +1,147 @@
+* {
+	outline: 0;
+	max-height: 100%
+}
+
+td,
+th,
+caption,
+strong,
+h6,
+h5,
+h4,
+h3,
+h2,
+h1 {
+	font-weight: 400
+}
+
+ul {
+	list-style: none
+}
+
+a {
+	text-decoration: none
+}
+
+a:hover {
+	text-decoration: underline
+}
+
+section,
+nav,
+hgroup,
+header,
+footer,
+figure,
+dialog,
+aside,
+article,
+td,
+th,
+tr,
+thead,
+tfoot,
+tbody,
+caption,
+table,
+legend,
+label,
+form,
+fieldset,
+li,
+ul,
+ol,
+dd,
+dt,
+dl,
+q,
+img,
+em,
+dfn,
+del,
+code,
+address,
+acronym,
+abbr,
+a,
+pre,
+blockquote,
+p,
+h6,
+h5,
+h4,
+h3,
+h2,
+h1,
+iframe,
+object,
+span,
+div,
+body,
+html,
+input,
+select,
+textarea,
+button {
+	border: 0;
+	vertical-align: baseline;
+	padding: 0;
+	margin: 0
+}
+
+section,
+nav,
+hgroup,
+header,
+footer,
+figure,
+dialog,
+aside,
+article,
+::before,
+::after {
+	display: block
+}
+
+table {
+	border-collapse: separate;
+	border-spacing: 0
+}
+
+td,
+th,
+caption {
+	text-align: left
+}
+
+th,
+td,
+table {
+	vertical-align: middle
+}
+
+q:after,
+q:before,
+blockquote:after,
+blockquote:before {
+	content: ''
+}
+
+button {
+	cursor: pointer
+}
+
+i {
+	font-style: normal
+}
+
+body {
+	font-size: 16px
+}
+
+input,
+select,
+textarea {
+	width: 100%
+}

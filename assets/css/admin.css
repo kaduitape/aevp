@@ -1,0 +1,23 @@
+.admin-fotos {
+    display: flex;
+}
+.admin-fotos .item {
+    flex: 1;
+    margin: 5px;
+    height: 200px;
+    position: relative;
+    overflow: hidden;
+}
+.admin-fotos .item img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+.acf-field-608f42d952d30 {
+    display: none;
+}
+#wpfooter  {
+    display: none !important;
+}

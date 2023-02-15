@@ -1,0 +1,32 @@
+// IMPORTAR FONTES
+
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;500;600;700&display=swap');
+
+$f_1: 'Source Sans Pro', sans-serif;
+
+.fw_600 {
+   font-weight: 600;
+}
+
+// COLORS
+$yellow: #ffd344;
+$orange: #febe3c;
+$red: #dc3545;
+$gray_1: #4e4e4f;
+$gray_2: #757575;
+$gray_bg: #f6f7fa;
+
+
+
+// $size: 12px, 14px, 16px, 18px, 20px, 22px, 24px, 28px, 30px, 32px, 36px, 40px, 46px, 50px, 56px, 60px;
+
+// @each $size in $size {
+//     .f_#{$size} {
+//         font-style:$size;
+//     }    
+// }
+
+
+
+
+

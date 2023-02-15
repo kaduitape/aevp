@@ -1,0 +1,10 @@
+// {
+//     "name": "ftp.itapetiningasp.com",
+//     "host": "ftp.itapetiningasp.com",
+//     "protocol": "ftp",
+//     "port": 21,
+//     "username": "mercadoinvest@mercadoinvestimento.com.br",
+//     "password": "Minvest@2408?80",
+//     "remotePath": "/wp-content/themes/ktheme/",
+//     "uploadOnSave": false
+// }
