@@ -2,8 +2,6 @@ $(function() {
 
 var form = $('#formulario');
 
-
-
 form.submit(function() {
     e = $(this);
     // loading.show();
@@ -26,6 +24,14 @@ form.submit(function() {
 }); 
 
 
+});
+
+$(document).ready(function() {
+    let qtd = $('#qtd_campos').val();
+    for (var i = 0; i < qtd; i++) {
+        let concat = '#aevp_'+i;
+        $(concat).select2();     
+     }
 });
 
 

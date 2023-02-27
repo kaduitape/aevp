@@ -74,7 +74,7 @@ foreach($valores as $valor) { ?>
             </td>
 
             <td>
-                <select class="js-example-basic-single" data-control="select2" name="<?php echo 'aevp_'.$n ?>" id="<?php echo 'aevp' ?>">
+                <select id="aevp_<?php echo $n?>" class="js-example-basic-single" data-control="select2" name="<?php echo 'aevp_'.$n ?>" id="<?php echo 'aevp' ?>">
                     <?php foreach($aevps as $aevp) { ?>
                     <option value="<?php echo $aevp ?>"><?php echo $aevp ?></option>
                     <?php } ?>
@@ -92,8 +92,7 @@ foreach($valores as $valor) { ?>
 
     </table>
 
-
-    <input name="qtd_campos" value="<?php echo $n?>" type="number">
+    <input id="qtd_campos" name="qtd_campos" value="<?php echo $n?>" type="number">
 
 </div>
 
