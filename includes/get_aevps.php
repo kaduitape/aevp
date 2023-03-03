@@ -13,9 +13,10 @@ if ( $query->have_posts() ) {
         $query->the_post();
         $id = get_the_ID();
         $name = get_the_title();
-
         $aevps[] = $name;
     }
 }
+
+wp_reset_postdata();
 
 ?>

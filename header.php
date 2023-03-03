@@ -9,6 +9,12 @@
 </head>
 
 <body <?php body_class(); ?>>
-    <header>
+    <section class="topo">
+        <div class="container">
+             <div class="row justify-content-center align-items-center col">
+                <img class="logo" width="150" src="<?php echo get_template_directory_uri().'/assets/images/logo.png' ?>" alt="">
+            </div>
+        </div>
+    </section>
 
-    </header>
+

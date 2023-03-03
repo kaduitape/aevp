@@ -1,112 +1,90 @@
 <?php get_header(); ?>
 
-
-<?php 
-$aevps = array();
-$args = array(
-    'post_type' => 'aevp',
-);
-
-$query = new WP_Query( $args );
-
-if ( $query->have_posts() ) {
-
-    while ( $query->have_posts() ) {
-        $query->the_post();
-        $id = get_the_ID();
-        $name = get_the_title();
-        $aevps[] = $name;
-    }
-}
-
-?>
-
+<?php include(locate_template('includes/get_aevps.php'));  ?>
 
 <?php
+    $id = get_the_ID();
+    $title = get_the_title();
+    $valores = get_field('field_63e3e26aa87db', $id);
+    $tempo = get_field('field_63e859e7ce06b', $id);
+    $turno = get_field('field_63e859f7f72ef', $id);
+    $qtd = count($valores);
+    $total = round(($qtd - 4) / 2);
+ ?>
 
-$args = array(
-    'post_type' => 'tempo',
-);
-// Custom query. 
-$query = new WP_Query( $args );
-// Check that we have query results. 
-if ( $query->have_posts() ) {
-    // Start looping over the query results. 
-    while ( $query->have_posts() ) {
-        $query->the_post();
-        $id = get_the_ID();
-        $title = get_the_title();
-        $valores = get_field('field_63e3e26aa87db', $id);
-        $tempo = get_field('field_63e859e7ce06b', $id);
-        $turno = get_field('field_63e859f7f72ef', $id);
-    }
-}
-// Restore original post data. 
-wp_reset_postdata();
-?>
+<h2>Criar escala de <?php echo $tempo. 'Minutos por torre'?></h2>
 
-<div class="row">
+<div class="row m-3">
 
-<div class="col-md-6">
+    <form id="formulario" action="javascript:;" method="post">
+        <input type="hidden" name="tipo" value="escala">
+        <input type="hidden" name="action" value="enviar">
+        <input type="hidden" name="action" value="enviar">
+        <input type="date" name="data" value="">
+        <input type="text" name="tempo" value="<?php echo $tempo ?>">
+        <input type="text" name="turno" value="<?php echo $turno ?>">
+        <input id="qtd_campos" name="qtd_campos" value="<?php echo $qtd?>" type="number">
 
-<form id="formulario" action="javascript:;" method="post">
-    <input type="hidden" name="tipo" value="escala">
-	<input type="hidden" name="action" value="enviar">
-    <input type="hidden" name="action" value="enviar">
-    <input type="date" name="data" value="">
-    <input type="text" name="tempo" value="<?php echo $tempo ?>">
-    <input type="text" name="turno" value="<?php echo $turno ?>">
+        <?php include(locate_template('includes/get_folgas.php'));   ?>
+        <?php $n = 0; ?>
 
-    <div class="">
-    <table>
+        <div class="row">
 
-<?php
-
-$n = 0;
-
-include(locate_template('includes/get_folgas.php'));    
-
-foreach($valores as $valor) { ?>
-
-        <tr>
-            <td id="<?php echo 'horario' ?>">
-                <input name="<?php echo 'time_'.$n ?>" type="time" step="1" value="<?php echo $valor['horario'] ?>">
-            </td>
-
-            <td>
-                <select id="aevp_<?php echo $n?>" class="js-example-basic-single" data-control="select2" name="<?php echo 'aevp_'.$n ?>" id="<?php echo 'aevp' ?>">
-                    <?php foreach($aevps as $aevp) { ?>
-                    <option value="<?php echo $aevp ?>"><?php echo $aevp ?></option>
-                    <?php } ?>
-                </select>
-            </td>
-        </tr>
+            <?php  foreach($valores as $valor) { ?>
 
 
-        <?php 
-        $n++; 
-    } 
+                <?php $grupo = $valor['grupo'];  ?>
 
-?>
-
-
-    </table>
-
-    <input id="qtd_campos" name="qtd_campos" value="<?php echo $n?>" type="number">
-
-</div>
+                <?php 
+                    if($grupo === "1") {
+                        echo '<div class="col-md-3 row">';
+                    }
+                    if($grupo > "1" && $grupo === $n) {
+                        echo '<div class="col-md-3 row">';
+                    } 
+                ?>    
 
 
+                <div class="row mb-2">
 
-<button type="submit">Enviar</button>
+                    <div class="col-auto" id="<?php echo 'horario' ?>">
+                        <input name="<?php echo 'time_'.$n ?>" type="time" step="1" value="<?php echo $valor['horario'] ?>">
+                    </div>
 
-</form>
+                    <div class="col-auto">
+                        <select id="aevp_<?php echo $n?>" class="js-example-basic-single" data-control="select2"
+                            name="<?php echo 'aevp_'.$n ?>" id="<?php echo 'aevp' ?>">
+                            <option value="">Selecione</option>
+                            <?php foreach($aevps as $aevp) { ?>
+                            <option value="<?php echo $aevp ?>"><?php echo $aevp ?></option>
+                            <?php } ?>
+                        </select>
+                    </div>
+
+                </div>
+
+                <?php 
+                    if($grupo === "1") {
+                        echo '</div>';
+                    }
+                    if($grupo > "1" && $grupo === $n) {
+                        echo '</div>';
+                    } 
+                ?> 
+
+
+            <?php  $n++;  } ?>
+
+            <button type="submit">Enviar</button>
+        <div>
+
+    </form>
 
 </div>
 
 <div class="col-md-6">
 
-<?php 
+    <?php 
 
 
 

@@ -1,2 +1,15 @@
 @import "general.scss";
 
+header {
+    width: 100px;
+}
+
+.topo {
+    background: #2D2D2D;
+    color: #fff;
+    padding: 10px 0;
+    .logo {
+        width: auto;
+        height: 120px;
+    }
+}
