@@ -16,5 +16,15 @@
             </div>
         </div>
     </section>
+    <div class="menu">
+        <div class="container">
+            <ul class="row">
+                <li class="col"><a href="<?php echo home_url().'/tempo' ?>">CRIAR ESCALA</a></li>
+                <li class="col"><a href="<?php echo home_url().'/escalas'?>">ESCALAS</a></li>
+                <li class="col"><a href="">AEVPS</a></li>
+                <li class="col"><a href="">FOLGAS</a></li>           
+            </ul>
+        </div>
+    </div>
 
 

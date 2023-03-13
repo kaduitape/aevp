@@ -6,10 +6,27 @@ header {
 
 .topo {
     background: #2D2D2D;
+    background-image: url('../images/camuflado.jpg');
+    background-size: cover;
     color: #fff;
     padding: 10px 0;
     .logo {
         width: auto;
         height: 120px;
     }
+}
+.menu {
+    background: #2D2D2D;
+    a {
+        color: #fff;
+    }
+}
+.bc_escalas {
+    padding: 10px 15px;
+    background: #f1f1f1;
+    font-weight: 400;
+    font-size: 22px;
+    color: #000;
+    text-decoration: none;
+    border-radius: 10px;
 }

@@ -8,8 +8,13 @@
     $valores = get_field('field_63e3e26aa87db', $id);
     $tempo = get_field('field_63e859e7ce06b', $id);
     $turno = get_field('field_63e859f7f72ef', $id);
-    $qtd = count($valores);
-    $total = round(($qtd - 4) / 2);
+
+    if($valores) {
+        $qtd = count($valores);
+        $total = round(($qtd - 4) / 2);
+    } else {
+        wp_die();
+    }
  ?>
 
 <h2>Criar escala de <?php echo $tempo. 'Minutos por torre'?></h2>

@@ -1,5 +1,15 @@
 <?php get_header(); ?>
 
-<?php include(locate_template('includes/get_escalas.php'));  ?>
+<section class="escalas">
+
+    <div class="container">
+
+        <?php include(locate_template('includes/get_escalas.php'));  ?>
+
+    </div>
+
+    
+
+</section>
 
 <?php get_footer(); ?>
